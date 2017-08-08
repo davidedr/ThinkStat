@@ -315,7 +315,7 @@ for d in data:
     hist[d] = hist.get(d, 0) + 1
 
 print   
-print "Found: ", str(len(hist)), " different values out of: ", str(len(data)), "values"
+print("Found: ", str(len(hist)), " different values out of: ", str(len(data)), "values")
 
 pmf = {}
 n = float(len(data))
