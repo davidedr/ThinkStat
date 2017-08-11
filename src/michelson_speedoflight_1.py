@@ -27,6 +27,8 @@ n_bins = int(np.sqrt(n_data))
 _ = plt.hist(sol['Velocity'], bins=n_bins)
 plt.show()
 
+# ML estimation of distribution parameters
+
 mean = np.mean(sol['Velocity'])
 std = np.std(sol['Velocity'])
 
@@ -39,7 +41,6 @@ n_bins_samples = int(np.sqrt(n_samples))
 
 x_sol_ecdf, y_sol_ecdf = ecdf.ecdf(sol['Velocity'])
 x_samples_ecdf, y_samples_ecdf = ecdf.ecdf(samples)
-
 
 _ = plt.plot(x_sol_ecdf, y_sol_ecdf, marker='.', linestyle='none')
 _ = plt.plot(x_samples_ecdf, y_samples_ecdf, marker='.', linestyle='none')
