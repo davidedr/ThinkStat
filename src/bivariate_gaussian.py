@@ -139,3 +139,16 @@ print(sigma)
 print(sigma_hat)
 delta_sigma = sigma - sigma_hat
 print("Actual sigma: " + str(sigma) + ", estimated (ML) sigma_hat: " + str(sigma_hat) + ", L2 norm of the difference: " + str(np.linalg.norm(delta_sigma)) + ".")
+
+'''
+    Now use library functions to estimate covariance matrix
+'''
+mu_hat = np.mean(X, axis = 0)
+
+d = X.shape[1]
+sigma_hat = np.eye(d)
+Phi2 = multivariate_normal.pdf(X, mean = mu_hat, cov = sigma_hat)
+print()
+
+print('Phi2.shape: ' + str(Phi2.shape))
+print(Phi2)
